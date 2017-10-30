@@ -35,7 +35,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<!--  test dependencies -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -54,6 +54,11 @@
 		    <artifactId>jquery</artifactId>
 		    <version>2.1.4</version>
 		</dependency>
+		<!-- Logging Dependencies -->
+ 		<dependency>
+ 			<groupId>ch.qos.logback</groupId>
+ 			<artifactId>logback-classic</artifactId>
+ 		</dependency>
 		
 	</dependencies>
 
