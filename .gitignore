@@ -9,6 +9,7 @@ target/
 .settings
 .springBeans
 *.pptx
+*.properties
 ### IntelliJ IDEA ###
 .idea
 *.iws
