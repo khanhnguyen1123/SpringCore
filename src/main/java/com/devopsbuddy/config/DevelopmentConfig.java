@@ -2,7 +2,10 @@ package com.devopsbuddy.config;
  
  import com.devopsbuddy.backend.service.EmailService;
  import com.devopsbuddy.backend.service.MockEmailService;
- import org.springframework.context.annotation.Bean;
+
+import org.h2.server.web.WebServlet;
+import org.springframework.boot.context.embedded.ServletRegistrationBean;
+import org.springframework.context.annotation.Bean;
  import org.springframework.context.annotation.Configuration;
  import org.springframework.context.annotation.Profile;
  import org.springframework.context.annotation.PropertySource;
@@ -21,4 +24,10 @@ package com.devopsbuddy.config;
      public EmailService emailService() {
          return new MockEmailService();
      }
+     @Bean
+     public ServletRegistrationBean h2ConsoleServletRegistration() {
+         ServletRegistrationBean bean = new ServletRegistrationBean(new WebServlet());
+         bean.addUrlMappings("/console/*");
+         return bean;
+     }    
  }
