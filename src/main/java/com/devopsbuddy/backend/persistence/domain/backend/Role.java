@@ -1,7 +1,10 @@
 package com.devopsbuddy.backend.persistence.domain.backend;
  
  import javax.persistence.*;
- import java.io.Serializable;
+
+import com.devopsbuddy.enums.RolesEnum;
+
+import java.io.Serializable;
  import java.util.HashSet;
  import java.util.Set;
  
@@ -30,6 +33,15 @@ package com.devopsbuddy.backend.persistence.domain.backend;
      @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
      private Set<UserRole> userRoles = new HashSet<>();
  
+     /**
+     * Full constructor. 
+     * @param rolesEnum
+     */
+     public Role(RolesEnum rolesEnum) {
+          this.id = rolesEnum.getId();
+          this.name = rolesEnum.getRoleName();
+     }     
+     
      public Role() {
  
      }
