@@ -40,7 +40,16 @@ public class PasswordResetTokenServiceIntegrationTest extends AbstractServiceInt
 
     @Test
     public void testFindByToken() throws Exception {
-        //Your implementation here.
+        User user = createUser(testName);
+
+        PasswordResetToken passwordResetToken =
+                passwordResetTokenService.createPasswordResetTokenForEmail(user.getEmail());
+        Assert.assertNotNull(passwordResetToken);
+        Assert.assertNotNull(passwordResetToken.getToken());
+
+        PasswordResetToken token = passwordResetTokenService.findByToken(passwordResetToken.getToken());
+        Assert.assertNotNull(token);
+
     }
 
 }
