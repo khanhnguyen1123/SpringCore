@@ -19,6 +19,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EntityScan(basePackages = "com.devopsbuddy.backend.persistence.domain.backend")
 @EnableTransactionManagement
 @PropertySource("file:src/main/resources/application-common.properties")
+@PropertySource("file:src/main/resources/stripe.properties")
 public class ApplicationConfig {
 	
 	@Value("${aws.s3.profile}")
