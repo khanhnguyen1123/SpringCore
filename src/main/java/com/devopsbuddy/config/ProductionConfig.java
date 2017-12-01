@@ -12,7 +12,7 @@ package com.devopsbuddy.config;
   */
  @Configuration
  @Profile("prod")
- @PropertySource("file:src/main/resources/application-dev.properties")
+ @PropertySource("file:src/main/resources/application-prod.properties")
  public class ProductionConfig {
  
 	 @Value("${stripe.prod.private.key}")
